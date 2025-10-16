@@ -2,7 +2,8 @@
 BMS emulator that mimics the battery pack and BMS firmware
 
 ## Project Structure
-bms_simulator/
+```bash
+battery_management_system/
 │
 ├── battery/
 │   ├── cell.py          # Simulates one cell
@@ -15,7 +16,8 @@ bms_simulator/
 ├── simulation.py        # Main control loop
 ├── config.py            # Parameters (cell count, dt, etc.)
 ├── logger.py            # File + console logging
-└── requirements.txt     
+└── requirements.txt     # (matplotlib, numpy, etc.)
+```
 
 ## Battery Cell
 ### Overview

@@ -12,6 +12,9 @@ class BatteryCell:
         return 3.0 + 1.2 * soc
     
     def update(self, current, dt):
+        # update SOC using Coulomb counting
         self.soc -= (current * dt) / (self.capacity * 3600)
         self.soc = np.clip(self.soc, 0, 1)
-        self.voltage = self.ocv_from_soc(self.soc) - current 
+        
+        # calculate terminal voltage with internal resistance (V = OCV - I*R)
+        self.voltage = self.ocv_from_soc(self.soc) - current * self.r_int

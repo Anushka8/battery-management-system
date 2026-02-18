@@ -14,3 +14,6 @@ class BatteryPack:
 
     def get_cell_voltage(self):
         return [cell.voltage for cell in self.pack]
+    
+    def get_cell_soc(self):
+        return [cell.soc for cell in self.pack]

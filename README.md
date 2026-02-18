@@ -1,6 +1,11 @@
 # BMS Emulator
 BMS emulator that mimics the battery pack and BMS firmware
 
+A Battery Management System monitors the SoC, SoH, internal and external temperatures to maintain a healthy battery and notify anomalies.
+There are various methods to determine SoC and SoH that includes and not limited to the chemistry of the batter, electronics (voltage, current, internal resistence) and ML algorithms (Kalman Filter, classification to determine battery state, regression analysis, time-series analysis to predict future battery readings).
+
+This emulator focuses on the basic physical logging for voltage, current, internal resistence. Using these features to calculate the SoC and SoH (primitive methods) and plotting the battery behavior over time.
+
 ## Project Structure
 ```bash
 battery_management_system/
@@ -25,7 +30,7 @@ battery_management_system/
 - A typical Li-ion cell has a nominal capacity of 2.8-3.2 Ah so the default here is set to `capacity_ah = 3.0`
 
 ### Functions
-- `ocv_from_soc`: Calculates open-circuit voltage using state-of-charge (SOC). Although the relationship between OCV and SOC is non-linear. For simplicity, we have considered this formula. The formula indicates a voltage range of 3.0 - 4.2 V indiciating it is. Li-ion battery.
+- `ocv_from_soc`: Calculates open-circuit voltage using state-of-charge (SOC). The relationship between OCV and SOC is non-linear. For 
 - `update`: Updates SOC using Coulomb counting and voltage using OCV and internal resistance
 
 ## Battery Pack
@@ -43,3 +48,6 @@ battery_management_system/
 
 ## Simulation and Logging
 - Simulate battery functioning and display logs
+
+## References
+[Battery Management System](https://www.integrasources.com/blog/battery-management-systems-software-development/)
